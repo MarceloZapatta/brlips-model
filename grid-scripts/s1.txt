@@ -1,0 +1,507 @@
+1. apanhe cinza entre W dois agora x
+2. molhe vermelho com A zero breve X
+3. apanhe rosa para M sete breve x
+4. apanhe vermelho para M zero já x
+5. encha cinza sobre C cinco breve x
+6. encha cinza entre I quatro já x
+7. encha ferrugem entre K três breve x
+8. encha cinza com H um já x
+9. encha rosa com R três breve x
+10. tinja vermelho entre X três agora x
+11. molhe ferrugem para B quatro já x
+12. tinja ferrugem com H oito já x
+13. encha vermelho entre N seis agora x
+14. encha ferrugem entre B sete breve x
+15. molhe vermelho com Y quatro breve x
+16. encha vermelho sobre R um já x
+17. encha vermelho entre Z quatro depois x
+18. apanhe vermelho com P três já x
+19. molhe ferrugem entre G oito já x
+20. molhe vermelho entre X cinco breve x
+21. molhe rosa entre L quatro depois x
+22. apanhe rosa entre K nove já x
+23. tinja rosa sobre V zero depois x
+24. encha cinza entre A um depois x
+25. molhe rosa sobre D dois já x
+26. apanhe cinza entre Q oito agora x
+27. molhe rosa entre C nove agora x
+28. apanhe cinza entre L cinco agora x
+29. encha vermelho para D nove já x
+30. encha ferrugem entre O oito depois x
+31. apanhe ferrugem para Z um agora x
+32. molhe vermelho sobre H quatro já x
+33. molhe ferrugem sobre G oito já x
+34. encha vermelho entre B três breve x
+35. tinja vermelho para N quatro agora x
+36. molhe rosa para P três agora x
+37. molhe vermelho para H sete depois x
+38. apanhe ferrugem sobre H quatro agora  x
+39. apanhe cinza para G oito depois x
+40. apanhe cinza sobre E dois depois x
+41. molhe rosa sobre D oito já x
+42. tinja ferrugem para A dois breve x
+43. tinja vermelho com X cinco agora x
+44. tinja cinza para R quatro breve x
+45. molhe ferrugem sobre E um breve x
+46. tinja cinza com C um já x
+47. tinja vermelho entre J zero depois x
+48. encha rosa com U um depois x
+49. apanhe cinza com Q seis já x
+50. apanhe cinza para B seis depois x
+51. molhe ferrugem sobre E quatro agora x
+52. molhe ferrugem para I sete agora x
+53. molhe rosa com C dois depois x
+54. molhe ferrugem com O cinco depois x
+55. apanhe vermelho sobre Q cinco depois  x
+56. apanhe rosa para D seis já x
+57. molhe vermelho com M nove agora x
+58. apanhe ferrugem entre O sete já x
+59. tinja vermelho para Q dois breve x
+60. tinja cinza para J três breve x
+61. apanhe rosa sobre R um depois x
+62. tinja cinza entre H um agora  x
+63. apanhe vermelho com D um agora x
+64. tinja vermelho para V zero agora x
+65. molhe rosa entre K nove agora x
+66. encha ferrugem entre Z sete agora x
+67. encha ferrugem com O sete depois x
+68. molhe ferrugem com A cinco já x
+69. apanhe rosa sobre Y seis depois x
+70. molhe rosa para R nove breve x
+71. apanhe ferrugem com A nove já x
+72. encha rosa com R três já x
+73. encha cinza para K três já x 
+74. encha ferrugem entre K oito depois x
+75. encha cinza para Z oito breve x
+76. tinja rosa para F um depois x
+77. tinja ferrugem entre Z quatro agora x 
+78. encha rosa entre K um agora x
+79. tinja rosa entre E cinco breve x
+80. apanhe vermelho entre X seis agora x
+81. encha rosa para J quatro agora x
+82. tinja ferrugem sobre C quatro agora x 
+83. tinja cinza entre Q cinco depois x
+84. encha cinza sobre K quatro agora x
+85. molhe cinza entre X zero já x
+86. molhe cinza para E três breve x
+87. encha rosa para V sete breve x
+88. molhe vermelho com T seis já x
+89. tinja cinza sobre M três já x
+90. tinja ferrugem sobre J nove breve x
+91. encha ferrugem para T nove depois x
+92. tinja cinza entre J cinco depois x
+93. molhe ferrugem com C seis agora x
+94. encha ferrugem com M quatro depois x
+95. encha cinza sobre A zero já x
+96. tinja rosa para L seis agora x
+97. molhe ferrugem para G dois já x
+98. apanhe ferrugem entre Q dois já x
+99. encha cinza para W três agora x
+100. encha vermelho sobre S cinco breve x
+
+
+
+-------
+
+
+
+101. apanhe rosa entre N três breve
+102. apanhe ferrugem com C cinco agora
+103. encha cinza entre F seis já
+104. encha ferrugem para H dois já
+105. apanhe rosa com R três agora
+106. tinja vermelho entre V sete agora
+107. molhe cinza com B três breve
+108. encha vermelho com B nove agora
+109. encha rosa para U sete agora
+110. molhe vermelho para H um já
+111. apanhe rosa sobre R nove agora
+112. encha rosa entre B sete agora
+113. tinja cinza com P quatro agora
+114. molhe ferrugem para E quatro agora
+115. apanhe cinza para A sete depois
+116. molhe rosa entre Y oito já
+117. molhe vermelho entre J quatro depois
+118. encha rosa entre N sete depois
+119. tinja cinza entre H três depois
+120. molhe ferrugem com B nove depois
+121. tinja cinza entre K quatro depois
+122. molhe vermelho sobre I cinco já
+123. tinja rosa entre B sete já
+124. apanhe rosa para W um depois
+125. apanhe vermelho sobre Z nove agora
+126. encha vermelho sobre M dois já
+127. tinja vermelho com X zero já
+128. encha vermelho para E nove breve
+129. encha ferrugem sobre N três breve
+130. molhe cinza entre Z dois agora
+131. encha cinza entre R nove agora
+132. molhe ferrugem para F um depois
+133. molhe vermelho para R oito breve
+134. encha rosa sobre U oito breve
+135. tinja ferrugem sobre M seis agora
+136. molhe vermelho com A quatro breve
+137. tinja rosa entre I zero depois
+138. encha vermelho sobre F dois depois
+139. encha rosa entre P sete depois
+140. tinja cinza para L seis depois
+141. molhe cinza sobre M quatro depois
+142. encha rosa com Q cinco agora
+143. apanhe ferrugem sobre L seis breve
+144. tinja ferrugem com I um depois
+145. encha ferrugem entre X um breve
+146. encha rosa com X oito agora
+147. molhe rosa com B cinco já
+148. molhe ferrugem entre F quatro já
+149. molhe cinza para Z zero já
+150. tinja vermelho sobre P cinco breve
+151. apanhe vermelho com V um breve
+152. apanhe rosa com T cinco depois
+153. tinja ferrugem para U sete já
+154. encha ferrugem com T três já
+155. molhe ferrugem entre I zero breve
+156. molhe ferrugem sobre U dois breve
+157. molhe cinza entre F zero depois
+158. molhe rosa com D zero já
+159. encha rosa com B sete agora
+160. molhe rosa entre C dois agora
+161. tinja cinza sobre W seis breve
+162. apanhe ferrugem com P seis já
+163. molhe cinza sobre Y oito breve
+164. molhe rosa entre B zero depois
+165. tinja vermelho sobre Y oito agora
+166. tinja ferrugem entre S quatro breve
+167. tinja rosa para R sete depois
+168. molhe cinza com T zero depois
+169. tinja vermelho sobre X oito breve
+170. encha cinza com Z nove já
+171. encha rosa entre U zero breve
+172. apanhe vermelho entre Q sete breve
+173. encha rosa com Z sete breve
+174. apanhe ferrugem sobre Y cinco depois
+175. molhe vermelho com G cinco já
+176. encha rosa sobre M seis agora
+177. encha rosa sobre H oito agora
+178. encha cinza com N sete breve
+179. apanhe ferrugem entre I nove agora
+180. tinja rosa entre G um breve
+181. apanhe ferrugem sobre I zero agora
+182. tinja ferrugem sobre W oito depois
+183. encha rosa com M cinco breve
+184. apanhe cinza entre K zero breve
+185. encha rosa sobre J zero agora
+186. apanhe ferrugem para A nove breve
+187. molhe vermelho sobre O cinco agora
+188. encha cinza para X seis agora
+189. tinja rosa para G cinco breve
+190. molhe cinza sobre M sete já
+191. apanhe vermelho entre B quatro já
+192. encha ferrugem para D oito agora
+193. apanhe cinza para N sete agora
+194. molhe rosa entre X quatro breve
+195. molhe vermelho entre U nove depois
+196. molhe cinza para E dois agora
+197. tinja rosa para H um agora
+198. encha cinza com P sete já
+199. molhe cinza com A nove agora
+200. encha ferrugem entre A nove já
+201. apanhe cinza entre O oito breve
+202. tinja vermelho com X cinco breve
+203. tinja rosa sobre A cinco agora
+204. encha vermelho com Z cinco depois
+205. encha ferrugem sobre T dois breve
+206. tinja ferrugem para B oito breve
+207. encha rosa com J cinco já
+208. encha ferrugem com Q oito depois
+209. molhe cinza entre L seis depois
+210. encha rosa para V cinco breve
+211. encha vermelho para G dois agora
+212. molhe vermelho entre A oito breve
+213. apanhe rosa entre B nove depois
+214. encha vermelho com C sete breve
+215. apanhe rosa sobre A quatro depois
+216. tinja cinza sobre A quatro agora
+217. tinja rosa com H quatro agora
+218. molhe ferrugem com V quatro depois
+219. molhe rosa com F quatro agora
+220. molhe vermelho sobre C seis já
+221. tinja rosa com P seis agora
+222. apanhe rosa para K dois breve
+223. apanhe rosa para V sete breve
+224. encha vermelho entre K nove já
+225. tinja ferrugem para D quatro já
+226. molhe ferrugem com O seis depois
+227. molhe ferrugem com J seis depois
+228. apanhe cinza para S cinco já
+229. encha rosa com R um depois
+230. apanhe ferrugem entre U um já
+231. tinja ferrugem entre F um agora
+232. encha vermelho para L dois depois
+233. encha ferrugem entre W oito agora
+234. encha ferrugem para O quatro breve
+235. apanhe vermelho com Q um breve
+236. encha vermelho com G cinco já
+237. tinja vermelho com I seis já
+238. apanhe ferrugem entre O nove agora
+239. apanhe cinza com A cinco agora
+240. apanhe vermelho para I seis agora
+241. molhe rosa entre W cinco depois
+242. molhe ferrugem para B nove depois
+243. molhe vermelho sobre Y quatro agora
+244. molhe vermelho sobre M oito depois
+245. tinja vermelho para O cinco agora
+246. tinja ferrugem entre T seis depois
+247. tinja ferrugem sobre Q oito depois
+248. apanhe cinza com X cinco agora
+249. tinja cinza para O quatro depois
+250. tinja ferrugem entre O quatro já
+251. tinja ferrugem com B sete breve
+252. tinja vermelho para H sete agora
+253. tinja rosa com C sete breve
+254. encha rosa entre E nove já
+255. encha vermelho sobre L oito agora
+256. encha ferrugem entre P cinco breve
+257. apanhe ferrugem para S oito agora
+258. molhe cinza para F zero depois
+259. apanhe ferrugem sobre R quatro depois
+260. molhe rosa entre E um breve
+261. molhe cinza para G nove depois
+262. apanhe vermelho entre A um depois
+263. encha rosa sobre Q sete breve
+264. molhe cinza sobre Z um breve
+265. tinja cinza sobre T zero já
+266. encha cinza com G dois já
+267. encha vermelho sobre K sete agora
+268. tinja ferrugem com H um agora
+269. molhe ferrugem entre H zero agora
+270. encha rosa entre H cinco já
+271. apanhe ferrugem com H sete breve
+272. apanhe ferrugem entre P zero já
+273. molhe ferrugem com U nove depois
+274. molhe ferrugem entre E quatro agora
+275. apanhe rosa com V seis depois
+276. apanhe ferrugem para R cinco já
+277. apanhe cinza para S cinco breve
+278. encha rosa entre J dois depois
+279. apanhe ferrugem sobre F seis breve
+280. apanhe ferrugem para C quatro depois
+281. molhe rosa para E oito já
+282. molhe vermelho para M três já
+283. apanhe rosa entre O três depois
+284. encha ferrugem para F um agora
+285. molhe rosa com V quatro agora
+286. molhe ferrugem sobre H um breve
+287. apanhe vermelho sobre X zero depois
+288. tinja vermelho entre M seis depois
+289. molhe ferrugem com Y quatro agora
+290. apanhe rosa para P um já
+291. molhe vermelho para K seis depois
+292. apanhe vermelho para Q oito agora
+293. tinja vermelho com J nove já
+294. apanhe cinza entre Y quatro já
+295. molhe rosa entre D dois depois
+296. apanhe cinza para P dois breve
+297. encha rosa com K sete já
+298. tinja ferrugem entre R seis agora
+299. tinja cinza entre C quatro depois
+300. apanhe rosa com R um já
+301. apanhe ferrugem entre U um breve
+302. encha rosa para G dois depois
+303. apanhe ferrugem para O sete breve
+304. apanhe ferrugem para G cinco depois
+305. molhe rosa entre P zero já
+306. molhe cinza entre D um breve
+307. molhe cinza para G nove breve
+308. apanhe vermelho com R dois agora
+309. apanhe ferrugem com Y um depois
+310. apanhe rosa entre G um breve
+311. encha rosa sobre P um agora
+312. encha ferrugem sobre W três breve
+313. molhe rosa sobre F dois breve
+314. encha vermelho para J dois agora
+315. encha ferrugem sobre R dois depois
+316. tinja vermelho para R nove breve
+317. tinja ferrugem para S cinco breve
+318. encha rosa sobre O dois agora
+319. molhe rosa sobre V oito breve
+320. tinja vermelho para Z cinco agora
+321. tinja ferrugem para L seis breve
+322. tinja vermelho entre A três breve
+323. encha vermelho entre G dois agora
+324. apanhe rosa para V sete depois
+325. tinja rosa sobre N dois agora
+326. encha ferrugem entre M zero depois
+327. encha ferrugem com K sete depois
+328. apanhe ferrugem sobre U cinco agora
+329. encha cinza com S sete breve
+330. encha vermelho sobre X um agora
+331. apanhe cinza com T quatro já
+332. apanhe cinza para J dois já
+333. apanhe rosa para E três já
+334. molhe vermelho sobre S quatro já
+335. encha vermelho para A seis breve
+336. encha vermelho sobre B cinco já
+337. tinja cinza entre S um depois
+338. tinja cinza sobre R zero breve
+339. apanhe cinza para U nove já
+340. molhe ferrugem com H cinco depois
+341. apanhe ferrugem com W quatro breve
+342. apanhe cinza com W sete depois
+343. encha ferrugem entre J três depois
+344. encha ferrugem entre V quatro depois
+345. molhe ferrugem entre K zero já
+346. apanhe cinza entre S três breve
+347. molhe vermelho para K zero agora
+348. apanhe vermelho entre L sete breve
+349. molhe ferrugem sobre N seis depois
+350. encha vermelho sobre V um breve
+351. encha ferrugem com I dois já
+352. apanhe rosa com S quatro depois
+353. encha vermelho com V cinco agora
+354. apanhe cinza com Q zero breve
+355. tinja ferrugem com F dois breve
+356. encha rosa entre R oito já
+357. apanhe rosa com Y cinco já
+358. encha cinza entre O quatro depois
+359. encha vermelho para Y um já
+360. encha rosa entre K quatro depois
+361. encha cinza sobre P zero já
+362. apanhe cinza entre G nove depois
+363. molhe rosa para Q cinco breve
+364. apanhe vermelho com H quatro depois
+365. encha cinza entre V zero breve
+366. apanhe rosa entre H cinco depois
+367. apanhe vermelho sobre Z oito depois
+368. tinja vermelho com E sete já
+369. molhe ferrugem para H um agora
+370. apanhe vermelho com D três agora
+371. molhe vermelho sobre Q sete depois
+372. apanhe vermelho sobre I sete já
+373. apanhe rosa com M cinco agora
+374. molhe cinza entre N zero depois
+375. encha rosa para H um depois
+376. molhe ferrugem entre D cinco agora
+377. tinja vermelho com N zero breve
+378. molhe cinza entre E quatro depois
+379. tinja rosa para R seis depois
+380. molhe ferrugem entre O dois depois
+381. tinja ferrugem entre A zero breve
+382. apanhe cinza sobre B um já
+383. tinja vermelho sobre S oito depois
+384. molhe vermelho entre B cinco já
+385. apanhe ferrugem sobre V nove depois
+386. tinja cinza sobre R um depois
+387. encha cinza para T cinco depois
+388. tinja rosa com P sete depois
+389. encha cinza sobre A seis breve
+390. apanhe vermelho sobre B sete já
+391. molhe rosa com C oito já
+392. tinja vermelho com T dois já
+393. molhe ferrugem sobre U seis agora
+394. encha ferrugem entre Q sete breve
+395. encha vermelho para I oito já
+396. apanhe rosa para Z cinco já
+397. tinja cinza entre F oito já
+398. tinja vermelho sobre E sete depois
+399. apanhe rosa para W três depois
+400. molhe cinza para G um breve
+401. apanhe cinza entre V quatro agora
+402. molhe vermelho para J cinco já
+403. molhe ferrugem para M cinco depois
+404. tinja cinza para B dois breve
+405. encha cinza entre K oito breve
+406. encha cinza com X três breve
+407. molhe cinza entre S três depois
+408. apanhe rosa entre L zero depois
+409. tinja rosa entre S zero já
+410. tinja rosa sobre J nove depois
+411. apanhe rosa para B um agora
+412. encha vermelho entre N zero já
+413. encha ferrugem entre O quatro agora
+414. apanhe vermelho com L dois breve
+415. encha vermelho sobre W três agora
+416. apanhe cinza sobre W dois depois
+417. apanhe ferrugem entre Y zero agora
+418. tinja cinza entre F zero depois
+419. apanhe cinza com Q cinco agora
+420. tinja vermelho para T três agora
+421. apanhe vermelho para X quatro breve
+422. apanhe ferrugem sobre B nove breve
+423. apanhe ferrugem sobre N dois breve
+424. apanhe rosa sobre W dois já
+425. encha rosa com E seis já
+426. apanhe vermelho com G zero depois
+427. apanhe cinza sobre W seis depois
+428. apanhe vermelho para I zero agora
+429. tinja vermelho sobre R seis já
+430. molhe vermelho entre W seis depois
+431. molhe rosa para D sete breve
+432. encha ferrugem com A cinco breve
+433. molhe rosa para E quatro já
+434. apanhe vermelho entre A quatro breve
+435. apanhe rosa entre N oito já
+436. molhe vermelho entre S zero já
+437. molhe rosa com O dois já
+438. apanhe cinza com J oito agora
+439. encha vermelho entre Q seis breve
+440. tinja cinza entre L três agora
+441. apanhe vermelho entre L nove já
+442. encha cinza sobre H um breve
+443. encha rosa para F nove já
+444. tinja cinza para L quatro agora
+445. encha ferrugem entre S dois depois
+446. tinja cinza para K cinco já
+447. tinja vermelho para H três depois
+448. tinja cinza entre V seis já
+449. apanhe rosa com U dois agora
+450. tinja rosa sobre I seis depois
+451. tinja ferrugem sobre N cinco já
+452. tinja ferrugem com I sete agora
+453. encha rosa para J um breve
+454. molhe cinza sobre W quatro já
+455. encha ferrugem sobre F cinco já
+456. molhe vermelho sobre A sete breve
+457. tinja vermelho entre B zero já
+458. molhe ferrugem sobre M cinco depois
+459. molhe rosa com Q três depois
+460. apanhe ferrugem sobre S quatro breve
+461. encha cinza para F cinco já
+462. apanhe rosa sobre S quatro depois
+463. molhe rosa sobre C três breve
+464. apanhe rosa com Q três agora
+465. apanhe cinza com Z zero agora
+466. tinja cinza para X dois agora
+467. apanhe vermelho sobre N zero já
+468. apanhe vermelho para P quatro breve
+469. apanhe cinza entre F quatro agora
+470. molhe cinza sobre S quatro breve
+471. encha ferrugem entre M seis breve
+472. encha rosa para D quatro depois
+473. tinja rosa entre S quatro depois
+474. encha ferrugem com T dois breve
+475. tinja cinza para V zero depois
+476. tinja ferrugem com A dois breve
+477. apanhe rosa para I oito breve
+478. encha ferrugem para W seis breve
+479. tinja rosa entre Z seis já
+480. apanhe rosa para O quatro já
+481. encha ferrugem entre Q nove breve
+482. tinja vermelho para Q oito depois
+483. apanhe cinza para J três depois
+484. molhe rosa sobre I oito já
+485. tinja cinza com R quatro breve
+486. encha vermelho para N nove breve
+487. encha vermelho com F zero agora
+488. tinja vermelho com J cinco breve
+489. encha rosa para N cinco agora
+490. encha rosa sobre N quatro agora
+491. encha rosa sobre X oito agora
+492. encha cinza entre S zero já
+493. molhe vermelho com V oito depois
+494. apanhe cinza entre A oito já
+495. apanhe cinza com J três agora
+496. molhe vermelho com M oito agora
+497. molhe vermelho para X zero já
+498. tinja rosa sobre U nove já
+499. apanhe rosa com V oito breve
+500. molhe vermelho para N quatro agora
