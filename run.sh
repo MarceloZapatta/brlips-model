@@ -1,16 +1,38 @@
 #!/bin/bash
 
-# Build the Docker image
-docker-compose build
+# Activate virtual environment
+source .venv/bin/activate
+
+# Set CUDA environment variables
+export XLA_FLAGS="--xla_gpu_cuda_data_dir=/usr/local/cuda"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export CUDA_HOME="/usr/local/cuda"
+export PATH="/usr/local/cuda/bin:$PATH"
 
 # Function to run training
 train() {
-    docker-compose run --rm lipreader python train.py
+    python train.py
 }
 
 # Function to run testing
 test() {
-    docker-compose run --rm lipreader python test.py
+    python test.py
+}
+
+# Function to run test training
+test_train() {
+    # Ensure CUDA is properly configured
+    if [ ! -d "/usr/local/cuda" ]; then
+        echo "Error: CUDA installation not found in /usr/local/cuda"
+        exit 1
+    fi
+    
+    # Create symbolic link for libdevice if it doesn't exist
+    if [ ! -f "./libdevice.10.bc" ] && [ -f "/usr/local/cuda/nvvm/libdevice/libdevice.10.bc" ]; then
+        ln -s /usr/local/cuda/nvvm/libdevice/libdevice.10.bc ./libdevice.10.bc
+    fi
+    
+    python test_train.py
 }
 
 # Parse command line arguments
@@ -21,8 +43,11 @@ case "$1" in
     "test")
         test
         ;;
+    "test-train")
+        test_train
+        ;;
     *)
-        echo "Usage: ./run.sh [train|test]"
+        echo "Usage: ./run.sh [train|test|test-train]"
         exit 1
         ;;
 esac 

@@ -1,5 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras import layers, Model
+import keras
 
 class LipReader(Model):
     def __init__(self, vocab_size, max_sequence_length=100):
@@ -14,8 +15,18 @@ class LipReader(Model):
         self.pool3 = layers.MaxPooling2D()
         
         # Temporal features
-        self.lstm1 = layers.LSTM(256, return_sequences=True)
-        self.lstm2 = layers.LSTM(256, return_sequences=True)
+        self.lstm1 = keras.layers.LSTM(
+            256,
+            return_sequences=True,
+            kernel_initializer='glorot_uniform',
+            recurrent_initializer='orthogonal'
+        )
+        self.lstm2 = keras.layers.LSTM(
+            256,
+            return_sequences=True,
+            kernel_initializer='glorot_uniform',
+            recurrent_initializer='orthogonal'
+        )
         
         # Output layer
         self.dense = layers.Dense(vocab_size, activation='softmax')
@@ -37,7 +48,12 @@ class LipReader(Model):
         x = self.pool3(x)
         
         # Reshape for LSTM
-        x = tf.reshape(x, (batch_size, sequence_length, -1))
+        # Calculate feature dimensions
+        feature_dim = 8 * 8 * 128  # After 3 pooling layers: 64->32->16->8
+        x = tf.reshape(x, (batch_size, sequence_length, feature_dim))
+        
+        # Ensure input is float32
+        x = tf.cast(x, tf.float32)
         
         # LSTM layers
         x = self.lstm1(x)
