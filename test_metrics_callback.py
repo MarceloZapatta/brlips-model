@@ -3,17 +3,17 @@ from utils.data_loader import DataLoader
 from model.lip_reader import LipReader, MetricsCallback
 import os
 import numpy as np
-from datetime import datetime
+import time
 
 # Configuration
 VIDEO_DIR = "./app/data/videos"
 TEXT_DIR = "./app/data/texts"
 CHECKPOINT_DIR = "./checkpoints"
-BATCH_SIZE = 4  # Physical batch size
-EPOCHS = 100
+BATCH_SIZE = 1
+EPOCHS = 10
 MAX_SEQUENCE_LENGTH = 100
 TARGET_SPEAKER = "s6"  # Specifically use speaker s6
-MAX_VIDEOS = 200  # Limit to 200 videos
+MAX_VIDEOS = 8  # Limit to 200 videos
 
 # GPU Memory management
 gpus = tf.config.list_physical_devices('GPU')
@@ -24,7 +24,7 @@ if gpus:
         # Optionally limit GPU memory
         tf.config.set_logical_device_configuration(
             gpus[0],
-            [tf.config.LogicalDeviceConfiguration(memory_limit=2048)]
+            [tf.config.LogicalDeviceConfiguration(memory_limit=1536)]  # Reduced to 1.5GB
         )
     except RuntimeError as e:
         print(e)
@@ -57,6 +57,8 @@ val_samples = video_samples[split_idx:]
 
 print(f"Training on {len(train_samples)} videos from {TARGET_SPEAKER}")
 print(f"Validating on {len(val_samples)} videos from {TARGET_SPEAKER}")
+print(f"Total videos: {len(video_samples)}")
+print("First few samples:", video_samples[:5])
 
 # Load all text data first to create vocabulary
 texts = []
@@ -68,6 +70,7 @@ for speaker_id, video_name in video_samples:
 # Create vocabulary
 vocab_size = data_loader.create_vocab(texts)
 print(f"Vocabulary size: {vocab_size}")
+print("Sample text:", texts[0][:100])
 
 # Create model
 model = LipReader(vocab_size, MAX_SEQUENCE_LENGTH)
@@ -75,9 +78,9 @@ model = LipReader(vocab_size, MAX_SEQUENCE_LENGTH)
 # Set the idx_to_char mapping for decoding
 model.set_idx_to_char(data_loader.idx_to_word)
 
-# Compile model
+# Compile model with a lower learning rate
 model.compile(
-    optimizer='adam',
+    optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),  # Lower learning rate
     metrics=['accuracy']
 )
 
@@ -99,15 +102,16 @@ lr_scheduler = tf.keras.callbacks.ReduceLROnPlateau(
     verbose=1
 )
 
-# Create metrics callback for WER and CER
+# Create metrics callback
 metrics_callback = MetricsCallback(data_loader, val_samples, model)
 
-# Data generator function
-def data_generator(samples, is_training=True):
+# Training generator
+def data_generator(samples):
     while True:
         np.random.shuffle(samples)
         for i in range(0, len(samples), BATCH_SIZE):
             batch_samples = samples[i:i+BATCH_SIZE]
+            print(f"\rProcessing batch {i//BATCH_SIZE + 1}/{len(samples)//BATCH_SIZE}", end="")
             batch_x = []
             batch_y = []
             input_length = []
@@ -116,9 +120,9 @@ def data_generator(samples, is_training=True):
             # Keep track of valid samples in this batch
             valid_samples = []
             
-            for idx, (speaker_id, video_name) in enumerate(batch_samples):
+            for speaker_id, video_name in batch_samples:
                 try:
-                    frames, frame_labels = data_loader.load_sample(speaker_id, video_name, augment=is_training)
+                    frames, frame_labels = data_loader.load_sample(speaker_id, video_name, augment=False)
                     
                     batch_x.append(frames)
                     # Convert labels to indices and ensure they're integers
@@ -131,12 +135,12 @@ def data_generator(samples, is_training=True):
                     
                     valid_samples.append((speaker_id, video_name))
                 except Exception as e:
-                    print(f"Warning: Skipping {speaker_id}/{video_name}: {str(e)}")
+                    print(f"\nWarning: Skipping {speaker_id}/{video_name}: {str(e)}")
                     continue
             
             # Skip this batch if no valid samples
             if not valid_samples:
-                print("Warning: No valid samples in batch, skipping...")
+                print("\nWarning: No valid samples in batch, skipping...")
                 continue
                 
             # Format data for CTC loss
@@ -157,26 +161,12 @@ def data_generator(samples, is_training=True):
             
             yield inputs, outputs
 
-# Add a TensorBoard callback
-log_dir = os.path.join("logs", datetime.now().strftime("%Y%m%d-%H%M%S"))
-tensorboard_callback = tf.keras.callbacks.TensorBoard(
-    log_dir=log_dir,
-    histogram_freq=1,
-    write_graph=True,
-    update_freq='epoch'
-)
-
-# Enable mixed precision
-policy = tf.keras.mixed_precision.Policy('mixed_float16')
-tf.keras.mixed_precision.set_global_policy(policy)
-
 # Train model with validation split
-print("Starting model training...")
 history = model.fit(
-    data_generator(train_samples, is_training=True),
+    data_generator(train_samples),
     steps_per_epoch=len(train_samples) // BATCH_SIZE,
     epochs=EPOCHS,
-    validation_data=data_generator(val_samples, is_training=False),
+    validation_data=data_generator(val_samples),
     validation_steps=len(val_samples) // BATCH_SIZE,
     callbacks=[
         checkpoint_callback,
@@ -187,8 +177,7 @@ history = model.fit(
             verbose=1
         ),
         lr_scheduler,
-        metrics_callback,  # Add the metrics callback
-        tensorboard_callback  # Add TensorBoard callback
+        metrics_callback  # Add the metrics callback
     ]
 )
 
@@ -201,16 +190,23 @@ print("="*50)
 total_epochs = len(history.history['loss'])
 print(f"Total epochs trained: {total_epochs}/{EPOCHS}")
 
+# Check if early stopping occurred
+if total_epochs < EPOCHS:
+    print(f"Training stopped early due to no improvement in validation loss")
+    
 # Find best epoch
 best_epoch = np.argmin(history.history['val_loss']) + 1
 best_val_loss = min(history.history['val_loss'])
+best_val_acc = history.history['val_accuracy'][best_epoch-1]
+print(f"Best model at epoch {best_epoch} with validation loss: {best_val_loss:.4f} and accuracy: {best_val_acc:.4f}")
 
-# Print best model information
-if 'val_accuracy' in history.history:
-    best_val_acc = history.history['val_accuracy'][best_epoch-1]
-    print(f"Best model at epoch {best_epoch} with validation loss: {best_val_loss:.4f} and accuracy: {best_val_acc:.4f}")
-else:
-    print(f"Best model at epoch {best_epoch} with validation loss: {best_val_loss:.4f}")
+# Print final metrics
+final_train_acc = history.history['accuracy'][-1]
+final_train_loss = history.history['loss'][-1]
+final_val_acc = history.history['val_accuracy'][-1]
+final_val_loss = history.history['val_loss'][-1]
+print(f"Final training accuracy: {final_train_acc:.4f}, loss: {final_train_loss:.4f}")
+print(f"Final validation accuracy: {final_val_acc:.4f}, loss: {final_val_loss:.4f}")
 
 # Print WER and CER metrics if available
 if 'real_wer' in history.history and 'real_cer' in history.history:

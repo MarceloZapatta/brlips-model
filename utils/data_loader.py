@@ -9,8 +9,8 @@ class DataLoader:
         self.max_sequence_length = max_sequence_length
         self.video_processor = VideoProcessor()
         self.char_to_idx = None
-        self.idx_to_char = None
         self.fps = 25  # Standard video FPS
+        self.problematic_videos = set()  # Track videos that cause errors
         
     def create_vocab(self, texts):
         """Create character vocabulary from all text samples"""
@@ -18,11 +18,20 @@ class DataLoader:
         words = set()
         for text in texts:
             for line in text.strip().split('\n'):
-                _, _, word = line.strip().split()
-                words.add(word)
+                parts = line.strip().split()
+                if len(parts) >= 3:
+                    word = parts[2]
+                    words.add(word)
         words.add('sil')  # Add silence token
         self.word_to_idx = {word: idx for idx, word in enumerate(sorted(words))}
         self.idx_to_word = {idx: word for word, idx in self.word_to_idx.items()}
+        
+        # Print vocabulary for debugging
+        print(f"Created vocabulary with {len(words)} words:")
+        print(f"First 10 words: {list(self.word_to_idx.keys())[:10]}")
+        print(f"Word to index mapping (sample): {dict(list(self.word_to_idx.items())[:5])}")
+        print(f"Index to word mapping (sample): {dict(list(self.idx_to_word.items())[:5])}")
+        
         return len(self.word_to_idx)
         
     def text_to_sequence(self, text, pad_to_length=None):
@@ -55,19 +64,60 @@ class DataLoader:
         """Convert integer sequence back to text"""
         return ' '.join([self.idx_to_word[idx] for idx in sequence])
         
-    def parse_align_file(self, text):
-        """Parse align file content into timing and text"""
+    def parse_align_file(self, text, total_frames):
+        """Parse align file content into timing and text
+        
+        Args:
+            text: Content of the alignment file
+            total_frames: Total number of frames in the video for scaling
+        
+        Returns:
+            List of alignment dictionaries with start_frame, end_frame, and text
+        """
         alignments = []
+        lines = text.strip().split('\n')
+        
+        # Get the total duration from the last line's end time
+        if lines:
+            last_line = lines[-1].strip().split()
+            if len(last_line) >= 2:
+                total_duration_ms = int(last_line[1])
+            else:
+                total_duration_ms = 0
+        else:
+            total_duration_ms = 0
+        
+        # If we have a valid duration, use it to scale frame indices
+        if total_duration_ms > 0 and total_frames > 0:
+            ms_per_frame = total_duration_ms / total_frames
+        else:
+            # Fallback to standard 25fps (40ms per frame)
+            ms_per_frame = 1000 / self.fps
+        
         for line in text.strip().split('\n'):
-            start, end, word = line.strip().split()
-            alignments.append({
-                'start_frame': int(int(start) * self.fps / 1000),  # Convert ms to frame number
-                'end_frame': int(int(end) * self.fps / 1000),
-                'text': word
-            })
+            parts = line.strip().split()
+            if len(parts) == 3:
+                start_ms, end_ms, word = parts
+                
+                # Convert milliseconds to frame numbers using the calculated ms_per_frame
+                start_frame = int(int(start_ms) / ms_per_frame)
+                end_frame = int(int(end_ms) / ms_per_frame)
+                
+                # Ensure end_frame doesn't exceed total_frames
+                if end_frame > total_frames:
+                    end_frame = total_frames
+                    
+                # Only add if end_frame > start_frame to avoid empty segments
+                if end_frame > start_frame:
+                    alignments.append({
+                        'start_frame': start_frame,
+                        'end_frame': end_frame,
+                        'text': word
+                    })
+        
         return alignments
 
-    def load_sample(self, speaker_id, video_name):
+    def load_sample(self, speaker_id, video_name, augment=False):
         """Load and process single video-text pair"""
         # Validate file existence
         video_path = os.path.join(self.video_dir, speaker_id, f"{video_name}.mpg")
@@ -78,11 +128,16 @@ class DataLoader:
         if not os.path.exists(text_path):
             raise FileNotFoundError(f"Text file not found: {text_path}")
         
+        # Skip known problematic videos
+        video_key = f"{speaker_id}/{video_name}"
+        if video_key in self.problematic_videos:
+            raise ValueError(f"Skipping known problematic video: {video_key}")
+        
         try:
             # Load video
             frames = self.video_processor.extract_frames(video_path)
             
-            # Process frames
+            # Process frames with error handling for individual frames
             processed_frames = []
             for i, frame in enumerate(frames):
                 try:
@@ -90,29 +145,35 @@ class DataLoader:
                     if processed is not None:
                         processed_frames.append(processed)
                 except Exception as e:
-                    raise RuntimeError(f"Error processing frame {i} in {video_path}: {str(e)}")
+                    print(f"Warning: Error processing frame {i} in {video_path}: {str(e)}")
+                    # Continue with other frames instead of failing completely
+                    continue
             
             if not processed_frames:
-                raise ValueError(f"No valid frames processed from video: {speaker_id}/{video_name}")
+                self.problematic_videos.add(video_key)
+                raise ValueError(f"No valid frames processed from video: {video_key}")
             
             # Load and parse alignment file
             with open(text_path, 'r') as f:
-                alignments = self.parse_align_file(f.read())
+                align_content = f.read()
+                # Pass the total number of processed frames to properly scale alignments
+                alignments = self.parse_align_file(align_content, len(processed_frames))
             
             # Create frame-level text labels
             frame_labels = []
-            current_alignment_idx = 0
             
             for i in range(len(processed_frames)):
-                while (current_alignment_idx < len(alignments) - 1 and 
-                       i >= alignments[current_alignment_idx]['end_frame']):
-                    current_alignment_idx += 1
+                # Find the alignment that contains this frame
+                word_found = False
+                for alignment in alignments:
+                    if i >= alignment['start_frame'] and i < alignment['end_frame']:
+                        frame_labels.append(alignment['text'])
+                        word_found = True
+                        break
                 
-                if (i >= alignments[current_alignment_idx]['start_frame'] and 
-                    i < alignments[current_alignment_idx]['end_frame']):
-                    frame_labels.append(alignments[current_alignment_idx]['text'])
-                else:
-                    frame_labels.append('sil')  # silence for frames between words
+                # If no alignment contains this frame, it's silence
+                if not word_found:
+                    frame_labels.append('sil')
             
             # Pad or truncate sequence
             if len(processed_frames) > self.max_sequence_length:
@@ -126,4 +187,13 @@ class DataLoader:
             return np.array(processed_frames), frame_labels
         
         except Exception as e:
-            raise RuntimeError(f"Error processing {speaker_id}/{video_name}: {str(e)}") 
+            # Mark this video as problematic for future reference
+            self.problematic_videos.add(video_key)
+            import traceback
+            traceback.print_exc()
+            raise RuntimeError(f"Error processing {video_key}: {str(e)}") 
+
+    @property
+    def idx_to_char(self):
+        """Alias for idx_to_word for compatibility with LipReader"""
+        return self.idx_to_word if hasattr(self, 'idx_to_word') else None

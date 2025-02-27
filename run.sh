@@ -19,6 +19,15 @@ test() {
     python test.py
 }
 
+# Function to run testing
+test_visualization() {
+    python test_visualization.py
+}
+# Function to run testing
+test_metrics_callback() {
+    python test_metrics_callback.py
+}
+
 # Function to run test training
 test_train() {
     # Ensure CUDA is properly configured
@@ -46,8 +55,14 @@ case "$1" in
     "test-train")
         test_train
         ;;
+    "test-visualization")
+        test_visualization
+            ;;
+    "test-metrics-callback")
+        test_metrics_callback
+        ;;
     *)
-        echo "Usage: ./run.sh [train|test|test-train]"
+        echo "Usage: ./run.sh [train|test|test-train|test-visualization|test-metrics-callback]"
         exit 1
         ;;
 esac 
