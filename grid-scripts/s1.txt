@@ -99,13 +99,9 @@
 99. encha cinza para W três agora x
 100. encha vermelho sobre S cinco breve x
 
-
-
 -------
 
-
-
-101. apanhe rosa entre N três breve
+101. apanhe rosa entre N três breve 
 102. apanhe ferrugem com C cinco agora
 103. encha cinza entre F seis já
 104. encha ferrugem para H dois já
@@ -113,10 +109,10 @@
 106. tinja vermelho entre V sete agora
 107. molhe cinza com B três breve
 108. encha vermelho com B nove agora
-109. encha rosa para U sete agora
-110. molhe vermelho para H um já
+109. encha rosa com U sete agora
+110. molhe vermelho para H um já x
 111. apanhe rosa sobre R nove agora
-112. encha rosa entre B sete agora
+112. encha rosa entre B sete agora x
 113. tinja cinza com P quatro agora
 114. molhe ferrugem para E quatro agora
 115. apanhe cinza para A sete depois
@@ -147,8 +143,8 @@
 140. tinja cinza para L seis depois
 141. molhe cinza sobre M quatro depois
 142. encha rosa com Q cinco agora
-143. apanhe ferrugem sobre L seis breve
-144. tinja ferrugem com I um depois
+143. tinja ferrugem com I um depois
+144. apanhe ferrugem sobre L seis breve
 145. encha ferrugem entre X um breve
 146. encha rosa com X oito agora
 147. molhe rosa com B cinco já
@@ -174,7 +170,7 @@
 167. tinja rosa para R sete depois
 168. molhe cinza com T zero depois
 169. tinja vermelho sobre X oito breve
-170. encha cinza com Z nove já
+170. encha cinza com C nove já
 171. encha rosa entre U zero breve
 172. apanhe vermelho entre Q sete breve
 173. encha rosa com Z sete breve
@@ -183,7 +179,7 @@
 176. encha rosa sobre M seis agora
 177. encha rosa sobre H oito agora
 178. encha cinza com N sete breve
-179. apanhe ferrugem entre I nove agora
+179. apanhe ferrugem com I nove agora
 180. tinja rosa entre G um breve
 181. apanhe ferrugem sobre I zero agora
 182. tinja ferrugem sobre W oito depois
@@ -204,7 +200,10 @@
 197. tinja rosa para H um agora
 198. encha cinza com P sete já
 199. molhe cinza com A nove agora
-200. encha ferrugem entre A nove já
+200. encha ferrugem entre A nove já OK
+
+====================================== xx 
+
 201. apanhe cinza entre O oito breve
 202. tinja vermelho com X cinco breve
 203. tinja rosa sobre A cinco agora

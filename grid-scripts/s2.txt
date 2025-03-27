@@ -99,7 +99,7 @@
 99. apanhe vermelho para G cinco breve x
 100. molhe ferrugem sobre V seis breve
 
-
+---------------------
 
 101. apanhe ferrugem para F quatro já
 102. molhe ferrugem para C dois já
@@ -202,6 +202,11 @@
 199. tinja ferrugem entre G cinco agora
 200. tinja rosa entre A dois breve
 201. tinja rosa para T oito breve
+
+
+=============== xx
+
+
 202. encha ferrugem sobre J quatro depois
 203. tinja rosa sobre K nove depois
 204. tinja rosa sobre K quatro já
