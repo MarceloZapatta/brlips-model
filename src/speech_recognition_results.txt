@@ -1,0 +1,52 @@
+SPEECH RECOGNITION EVALUATION RESULTS
+===================================
+
+Word Error Rate (WER): 0.6333
+Character Error Rate (CER): 0.3263
+Exact Match Accuracy: 0.0000 (0/10)
+
+loss: 27.339265823364258, val_loss: 23.57655143737793
+
+SAMPLE PREDICTIONS
+=================
+
+Sample 1:
+Ground truth: 'bin red at m five again'
+Prediction  : 'bin bred at five again'
+
+Sample 2:
+Ground truth: 'bin blue in l five again'
+Prediction  : 'bin green it sive again'
+
+Sample 3:
+Ground truth: 'bin green by b three again'
+Prediction  : 'bin green bt free again'
+
+Sample 4:
+Ground truth: 'bin red in m zero please'
+Prediction  : 'bin green it five please'
+
+Sample 5:
+Ground truth: 'bin red at m three soon'
+Prediction  : 'bin bre it foe soon'
+
+Sample 6:
+Ground truth: 'bin white at g four now'
+Prediction  : 'bin bre it soe noo'
+
+Sample 7:
+Ground truth: 'bin red with t four now'
+Prediction  : 'bin green it soe now'
+
+Sample 8:
+Ground truth: 'bin red at f nine soon'
+Prediction  : 'bin bred at fire soon'
+
+Sample 9:
+Ground truth: 'bin blue at f three soon'
+Prediction  : 'bin green it foe soon'
+
+Sample 10:
+Ground truth: 'bin red by a zero please'
+Prediction  : 'bin bred bt five lease'
+

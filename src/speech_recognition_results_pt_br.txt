@@ -1,0 +1,51 @@
+SPEECH RECOGNITION EVALUATION RESULTS
+===================================
+
+Word Error Rate (WER): 1.0000
+Character Error Rate (CER): 0.6000
+Exact Match Accuracy: 0.0000 (0/10)
+loss: 67.36463928222656, val_loss: 63.2591667175293
+
+SAMPLE PREDICTIONS
+=================
+
+Sample 1:
+Ground truth: 'molhe ferrugem para e quatro agora'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 2:
+Ground truth: 'molhe vermelho sobre h quatro ja'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 3:
+Ground truth: 'tinja vermelho para v zero agora'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 4:
+Ground truth: 'encha cinza sobre a zero ja'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 5:
+Ground truth: 'tinja vermelho sobre p cinco breve'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 6:
+Ground truth: 'apanhe rosa sobre r nove agora'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 7:
+Ground truth: 'encha ferrugem para h dois ja'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 8:
+Ground truth: 'apanhe vermelho entre q sete breve'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 9:
+Ground truth: 'molhe cinza entre x zero ja'
+Prediction  : 'mnhe erga ore to goa'
+
+Sample 10:
+Ground truth: 'apanhe cinza para b seis depois'
+Prediction  : 'mnhe erga ore to goa'
+
