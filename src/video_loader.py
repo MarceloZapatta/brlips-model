@@ -115,6 +115,20 @@ def load_video_for_prediction(path:str) -> List[float]:
         # mouth_roi = frame[190:236,80:220,:] # 46x120
         frames.append(mouth_roi)
         frame_extraction_time += time.time() - frame_start
+
+    frames = frames[:75]
+
+    # Pad frames to exactly 75 frames if less than 75
+    if len(frames) < 75:
+        print(f"Padding frames from {len(frames)} to 75")
+        # Create empty frames with same dimensions as existing frames
+        padding_needed = 75 - len(frames)
+        # Use the last frame as a template for padding
+        last_frame = frames[-1] if frames else tf.zeros((46, 120, 1))
+        # Create padding frames (zeros with same shape as last frame)
+        padding_frames = [tf.zeros_like(last_frame) for _ in range(padding_needed)]
+        # Append padding frames to the original frames
+        frames.extend(padding_frames)
     
     cap.release()
     
