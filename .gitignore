@@ -1,2 +1,10 @@
 src/data/*
 venv
+models
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
