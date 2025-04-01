@@ -8,3 +8,4 @@ models
 *.pyz
 *.pywz
 *.pyzw
+visualization_results
